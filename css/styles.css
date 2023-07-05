@@ -27,7 +27,10 @@ body{
 
 }
 
-¿
+@media (min-width:1024px){
+
+    
+}
 /* Para quitar los puntos a los items de listas */
 ul {
     list-style: none;
@@ -108,6 +111,8 @@ main .Article_inicio p{
 }
 
 main .Article_inicio a{
+    display: block;
+    text-align: center;
     margin-top: 30px;
     margin-bottom: 250px;
     padding: 1em;
@@ -223,7 +228,57 @@ div .form_Contact label{
     font-weight: bold;
   }
 
-  
+  @media (min-width:1024px){
+
+    main .Article_inicio{
+        flex-direction: row;
+        margin-bottom: 50px;
+        max-width: none;
+    }
+    header .menu.menu_item{
+        display: inline-block;
+        padding: 10px;
+        font-weight: bold;
+    
+    }
+    .nav{
+        height: 45px;
+        padding: 0;
+    }
+
+    .gatito{
+        width: 50%;
+        display: flex;
+        align-items: center;
+    }
+
+    main .Article_inicio p{
+        text-align: left;
+        
+    }
+    main .Article_inicio h2 {
+        padding-bottom: 10px;
+        font-weight: bold;
+        font-size: 38px;
+        margin: 0;
+        text-align: center;
+    }
+    main .Article_inicio a {
+        margin: 30px 0 0;
+
+
+    }
+    .Hola{
+        width: 50%;
+        display: flex;
+        margin: 0;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+
+    
+  }
      
 /* Recomendaciones! 
 *  - Comenzar desde lo más general y luego ir hacia lo mas específico, asignando primero
