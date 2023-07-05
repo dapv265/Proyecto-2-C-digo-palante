@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diego Paredes</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="nav">
+
+            <img src="img/eidos_Logo.png" alt="Logo de EidosGlobal">
+            <nav class="menu">
+                <ul class="menu_lista">
+                    <li class="menu_item"><a href="index.html#inicio">Inicio</a></li>
+                    <li class="menu_item"><a href="index.html#hablemos">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section>
+            <article class="Article_inicio" id="inicio">
+
+                <div class="gatito">
+                    <img src="img/400.jpg" alt="Foto de gatito y su reflejo">
+                </div>
+                <div class="Hola">
+                    <h2>Hola! Soy Diego Paredes</h2>
+                </div>
+                    <p>Aquí un estudiante de telecomunicacioness, pasionado por la tecnología, la filosofía y la música. Me dedico al desarrolo de front-end con conocimiento en JavaScript, CSS y HTML. Además, tengo conocimiento básico en manejo de consolas de linux y redes.</p>
+                    <a href="">Descargar mi CV</a>         
+            </article>
+        </section>
+
+        <section>
+            <article class="Article_Contacto" id="hablemos">
+                <div class="Caja_Hablemos">
+                    <h2>Hablemos!</h2>
+                    <p>Si quieres que haga una idea realidad para ti ¿Qué esperas? Escribe a mis redes de contacto:</p>
+                </div>
+                <div class="Caja_imagenes">
+                    <a href="https://github.com/dapv265" target="_blank"><img src="img/github.png" alt=""></a>
+                    <a href="https://www.linkedin.com/in/diego-paredes-70590625a/" target="_blank"><img src="img/linkedin.png" alt=""></a>
+                    <button id= 'ebtn' class="ebtn" onclick="showHide();"><img src="img/mail.png" alt="" target="_blank"></button>
+                </div>
+                <div id = 'form_content' class="form_content">
+
+                    <div class="form_content_title">
+                        <h3>Ingresa tus datos</h3>
+                    </div>
+                    <form class="form_Contact" action="" method="post">
+                        <label for="POST-name">Nombre:</label>
+                        <input id="POST-name" type="text" name="name">
+                        <label for="POST-mail">Email:</label>
+                        <input id="POST-mail" type="email" name="mail">
+                        <label for="POST-telfono">Telefono</label>
+                        <input id="POST-telefono" type="number" name="telefono">
+                        <label for="POST-Asunto">Asunto:</label>
+                        <textarea name="" id="POST-Asunto" cols="30" rows="10"></textarea>
+                        <input id="btn__submit"type="submit" value="Enviar">
+                    </form>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="Caja_foot">
+        <p>Código Latam</p>
+        </div>
+    </footer>
+    <script>
+        function showHide(){
+            let f = document.getElementById('form_content');
+            
+            if(f.style.display === 'none'){
+                f.style.display = 'flex';
+
+            }else{
+                f.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
