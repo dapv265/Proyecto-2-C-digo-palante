@@ -13,7 +13,7 @@
     <header class="header">
         <div class="nav">
 
-            <img src="img/eidos_Logo.png" alt="Logo de EidosGlobal">
+            <img src="img/__ Dip-2.png" alt="Logo de EidosGlobal">
             <nav class="menu">
                 <ul class="menu_lista">
                     <li class="menu_item"><a href="index.html#inicio">Inicio</a></li>
@@ -30,25 +30,25 @@
                     <img src="img/400.jpg" alt="Foto de gatito y su reflejo">
                 </div>
                 <div class="Hola">
-                    <h2>Hola! Soy Diego Paredes</h2>
-                    <p>Aquí un estudiante de telecomunicacioness, pasionado por la tecnología, la filosofía y la música. Me dedico al desarrolo de front-end con conocimiento en JavaScript, CSS y HTML. Además, tengo conocimiento básico en manejo de consolas de linux y redes.</p>
-                    <a href="">Descargar mi CV</a>
+                    <h2 class="">Hola! Soy Diego Paredes</h2>
+                    <p class="">Aquí un estudiante de telecomunicacioness, pasionado por la tecnología, la filosofía y la música. Me dedico al desarrolo de front-end con conocimiento en JavaScript, CSS y HTML. Además, tengo conocimiento básico en manejo de consolas de linux y redes.</p>
+                    <a  href="docs/Diego Paredes CV.pdf" download="Diego Paredes CV">Descargar mi CV</a>
                 </div>
             </article>
         </section>
 
         <section>
             <article class="Article_Contacto" id="hablemos">
-                <div class="Caja_Hablemos">
+                <div class="Caja_Hablemos animado">
                     <h2>Hablemos!</h2>
                     <p>Si quieres que haga una idea realidad para ti ¿Qué esperas? Escribe a mis redes de contacto:</p>
                 </div>
-                <div class="Caja_imagenes">
+                <div class="Caja_imagenes animado">
                     <a href="https://github.com/dapv265" target="_blank"><img src="img/github.png" alt=""></a>
                     <a href="https://www.linkedin.com/in/diego-paredes-70590625a/" target="_blank"><img src="img/linkedin.png" alt=""></a>
-                    <button id= 'ebtn' class="ebtn" onclick="showHide();"><img src="img/mail.png" alt="" target="_blank"></button>
+                    <a id='ebtn' class="ebtn" ><img src="img/mail.png" alt="" target="_blank"></a>
                 </div>
-                <div id = 'form_content' class="form_content">
+                <div id = 'form_content' class="form_content" action="https://formsubmit.co/dparedesvargas12@gmail.com" method="POST">
 
                     <div class="form_content_title">
                         <h3>Ingresa tus datos</h3>
@@ -62,7 +62,7 @@
                         <input id="POST-telefono" type="number" name="telefono">
                         <label for="POST-Asunto">Asunto:</label>
                         <textarea name="" id="POST-Asunto" cols="30" rows="10"></textarea>
-                        <input id="btn__submit"type="submit" value="Enviar">
+                        <input id="btn__submit"type="submit" target="_blank" value="Enviar">
                     </form>
                 </div>
             </article>
@@ -75,6 +75,7 @@
         </div>
     </footer>
     <script>
+        let a = document.getElementById('ebtn');
         function showHide(){
             let f = document.getElementById('form_content');
             
@@ -85,6 +86,22 @@
                 f.style.display = 'none';
             }
         }
+
+        a.addEventListener('click', showHide)
+
+        let animado = document.querySelectorAll('.animado');
+
+        function MostrarScrooll(){
+            let ScrollTop = document.documentElement.scrollTop;
+            for(var i=0; i < animado.length; i++){
+                let alturaAnimado = animado[i].offsetTop;
+                if(alturaAnimado - 450 < ScrollTop){
+                    animado[i].style.opacity = 1;
+                }
+            }
+        }
+
+        window.addEventListener('scroll', MostrarScrooll);
     </script>
 </body>
 </html>

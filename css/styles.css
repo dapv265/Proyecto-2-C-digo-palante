@@ -3,7 +3,7 @@
 /* Fonts */
 /* Importar aquí la font */
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Quicksand:wght@400;700&display=swap');
 
 /* Aquí les dejamos como ayuda este "reset" en el cual ajustamos algunas propiedades
 *  cuyos valores asigna por defecto el navegador.
@@ -18,7 +18,7 @@
     /* Para que el scrolleo en la one page sea suave */
     scroll-behavior: smooth;
     font-family: 'Lato', sans-serif;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-size: 18px;
 }
 
@@ -67,23 +67,46 @@ main {
     
 }
 .header img {
-    height: 75px;
+    height: 200px;
     width: auto;
 }
 
 header .menu .menu_lista .menu_item{
     display: inline-block;
-    padding: 20px;
+    padding: 10px;
+    border-radius: 10px;
     font-weight: bold;
+}
 
+.menu_item:hover{
+
+    background-color: #8AA6A3;
+    margin: 10px;
+    transition-property: all;
+    transition-duration: .5s;
+
+}
+
+.animado{
+    opacity: 0;
+    transition: all 0.5s;
+    animation: mostrarArriba;
+}
+
+@keyframes mostrarArriba{
+    0%{
+        translate: translateY(-60px);
+    }
+    100%{
+        translate: translateY(0);
+    }
 }
 
  section article .gatito img{
     border-radius: 100%;
-    width: 350px;
-    height: 350px;
-}
-
+    width: 300px;
+    height: 300px;
+}    
 section article .gatito{
     justify-content: center;
 }
@@ -116,11 +139,16 @@ main .Article_inicio a{
     margin-top: 30px;
     margin-bottom: 250px;
     padding: 1em;
-    background-color: #af599e;
+    background-color: #10403B;
     border-radius: 30px;
     color: #fbfbfb;
     font-weight: bold;
     font-size: 20px;
+}
+
+.Article_inicio a:hover{
+    background-color: #127369;
+
 }
 
 main .Article_Contacto .Caja_Hablemos{
@@ -128,7 +156,7 @@ main .Article_Contacto .Caja_Hablemos{
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(175, 89, 158, 0.3);
+    background-color: #8AA6A3;
     height: 300px;
     width: 75%;
     margin: auto;
@@ -150,13 +178,12 @@ main .Article_Contacto .Caja_imagenes{
     justify-content: space-around;
     margin-bottom: 75px;
 }
+#ebtn:hover{
+    cursor: pointer;
+}
 
 main .Article_Contacto .Caja_imagenes img{
     height: 10vh;
-}
-
-.ebtn{
-    border-style: none;
 }
 .form_content{
     background-color: #af599e;
@@ -170,6 +197,7 @@ main .Article_Contacto .Caja_imagenes img{
 
 .form_content{
     display: none;
+    background-color: #127369;
 }
 
 div .form_content_title{
@@ -215,7 +243,7 @@ div .form_Contact label{
     background-color: #aaaa99;
 }
  footer .Caja_foot{
-    background-color: #af599e;
+    background-color: #127369;
     height: 200px;
     display: flex;
     justify-content: center;
@@ -232,7 +260,7 @@ div .form_Contact label{
 
     main .Article_inicio{
         flex-direction: row;
-        margin-bottom: 50px;
+        margin-bottom: 100px;
         max-width: none;
     }
     header .menu.menu_item{
@@ -241,9 +269,17 @@ div .form_Contact label{
         font-weight: bold;
     
     }
+    
     .nav{
-        height: 45px;
+        height: 60px;
         padding: 0;
+    }
+    .header img{
+        height: 150px;
+        margin-left: 30px;
+    }
+    .menu_lista{
+        margin-right: 40px;
     }
 
     .gatito{
@@ -275,9 +311,6 @@ div .form_Contact label{
         flex-direction: column;
         justify-content: flex-start;
     }
-
-
-    
   }
      
 /* Recomendaciones! 
