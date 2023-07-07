@@ -8,19 +8,24 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Favico -->
+
+    <link rel="icon" type="image/png" href="img/D_icon.png">
+
 </head>
 <body>
     <header class="header">
-        <div class="nav">
-
-            <img src="img/__ Dip-2.png" alt="Logo de EidosGlobal">
-            <nav class="menu">
+            <img src="img/__ Dip-2.png" alt="Logo">
+            <button class="abrir-menu"><img class="list_icono" src="img/list.svg" alt="list"></button>
+            <nav id="nav" class="nav">
+                <button id="cerrar"><img class='icono_cerrar'src="img/x-lg.svg" alt="cerrar"></button>
                 <ul class="menu_lista">
                     <li class="menu_item"><a href="index.html#inicio">Inicio</a></li>
+                    <li class="menu_item"><a href="index.html#proyectos">Mis Proyectos</a></li>
                     <li class="menu_item"><a href="index.html#hablemos">Contacto</a></li>
+                    
                 </ul>
             </nav>
-        </div>
     </header>
     <main>
         <section>
@@ -35,6 +40,16 @@
                     <a  href="docs/Diego Paredes CV.pdf" download="Diego Paredes CV">Descargar mi CV</a>
                 </div>
             </article>
+        </section>
+
+        <section id="proyectos" class="proyectos animado">
+            <h2 class="animado">Mis proyectos</h2>
+            <div class="contenedorProyectos">
+                <div class="proyectoItem animado"><a href=""><img src="img/400.jpg" alt=""></a><h3 class="tituloItem">Despegue!</h3><p>Este es un pequeño ejercicio que hice con javascript</p></div>
+                <div class="proyectoItem animado"><a href=""><img src="img/400.jpg" alt=""></a><h3 class="tituloItem">Proyecto Codigo Pa' Lante 1</h3><p>Proyecto de presectación con CSS y HTML</p></div>
+                <div class="proyectoItem animado"><a href=""><img src="img/400.jpg" alt=""></a><h3 class="tituloItem">Proyecto Código Pa' Lante 2</h3><p>Proyecto que realicé combinando 3 tecnologías del desarrollo web: CSS, JavaScript y</p></div>
+
+            </div>
         </section>
 
         <section>
@@ -67,6 +82,7 @@
                 </div>
             </article>
         </section>
+
     </main>
 
     <footer class="footer">
@@ -74,34 +90,8 @@
         <p>Código Latam</p>
         </div>
     </footer>
-    <script>
-        let a = document.getElementById('ebtn');
-        function showHide(){
-            let f = document.getElementById('form_content');
-            
-            if(f.style.display === 'none'){
-                f.style.display = 'flex';
-
-            }else{
-                f.style.display = 'none';
-            }
-        }
-
-        a.addEventListener('click', showHide)
-
-        let animado = document.querySelectorAll('.animado');
-
-        function MostrarScrooll(){
-            let ScrollTop = document.documentElement.scrollTop;
-            for(var i=0; i < animado.length; i++){
-                let alturaAnimado = animado[i].offsetTop;
-                if(alturaAnimado - 450 < ScrollTop){
-                    animado[i].style.opacity = 1;
-                }
-            }
-        }
-
-        window.addEventListener('scroll', MostrarScrooll);
+    <script src="main.js">
+        
     </script>
 </body>
 </html>

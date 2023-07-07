@@ -50,55 +50,70 @@ h2{
 *  el margin: auto; para tenerlo centrado fácilmente ;)
 */
 main {
-    max-width: 1200px;
     margin: auto;
 }
 
-.nav{
+header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5%;
     box-shadow: 0px 0px 10px gray;
     width: 100%;
-    height: 90px;
+    height: 100px;
     position: fixed;
     background-color: #fbfbfb;
     
 }
-.header img {
+header img {
     height: 200px;
     width: auto;
 }
+.abrir-menu{
+    display: none;
+}
 
+#cerrar{
+    display: none;
+}
+
+.menu_lista{
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+}
 header .menu .menu_lista .menu_item{
-    display: inline-block;
+    display: block;
     padding: 10px;
-    border-radius: 10px;
     font-weight: bold;
+    text-align: center;
 }
 
 .menu_item:hover{
 
     background-color: #8AA6A3;
-    margin: 10px;
     transition-property: all;
+    padding: 0 10px;
+    border-radius: 5px;
     transition-duration: .5s;
 
 }
 
 .animado{
     opacity: 0;
-    transition: all 0.5s;
-    animation: mostrarArriba;
+    transition: all 1s;
 }
+
+.mostrarArriba{
+    animation: mostrarArriba 1s;
+}
+
 
 @keyframes mostrarArriba{
     0%{
-        translate: translateY(-60px);
+        transform: translateX(-68px);
     }
     100%{
-        translate: translateY(0);
+        transform: translateX(0px);
     }
 }
 
@@ -137,7 +152,7 @@ main .Article_inicio a{
     display: block;
     text-align: center;
     margin-top: 30px;
-    margin-bottom: 250px;
+    margin-bottom: 300px;
     padding: 1em;
     background-color: #10403B;
     border-radius: 30px;
@@ -148,9 +163,62 @@ main .Article_inicio a{
 
 .Article_inicio a:hover{
     background-color: #127369;
-
 }
 
+.proyectos{
+    display: flex;
+    background-color: #127369;
+    width: 100%;
+    margin-bottom: 100px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contenedorProyectos{
+    display: flex;
+    flex-flow: row wrap;
+    width: 90%;
+    height: 100%;
+    align-items: start;
+    justify-content: space-around;
+}
+
+.proyectoItem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    width: 30%;
+}
+.proyectoItem p{
+    color: #fbfbfb;
+    text-align: center;
+}
+
+.proyectoItem img{
+    cursor: pointer;
+    border-radius: 10px;
+    height: 250px;
+    width: auto;
+    transition: all .2s;
+}
+
+.proyectoItem img:hover{
+    height: 230px;
+    box-shadow: 10px 10px rgba(45, 185, 69, 0.5);
+}
+
+.proyectos h2{
+    padding: 2rem;
+    color: #fbfbfb;
+    margin-bottom: 0px;
+}
+
+.tituloItem{
+    color: #fbfbfb;
+    font-weight: 700;
+    margin: 10px;
+}
 main .Article_Contacto .Caja_Hablemos{
     display: flex;
     justify-content: center;
@@ -270,8 +338,12 @@ div .form_Contact label{
     
     }
     
+    .header{
+        align-items: center;
+        height: 5rem;
+    }
     .nav{
-        height: 60px;
+        height: 15px;
         padding: 0;
     }
     .header img{
@@ -312,6 +384,74 @@ div .form_Contact label{
         justify-content: flex-start;
     }
   }
+
+  @media (max-width: 800px) {
+
+    header{
+        position: fixed;
+        box-shadow: 0, 0, 0 100vmax rgba(0, 0, 0, .5);
+    }
+    .abrir-menu{
+        display: block;
+        border-style: none;
+        background-color: transparent;
+    }
+    .list_icono{
+        width: 2rem;
+    }
+    #cerrar{
+        display: block;
+        border-style: none;
+        background-color: transparent;
+    }
+
+    .icono_cerrar{
+        width: 1rem;
+    }
+    nav{
+        opacity: 0;
+        visibility: hidden;
+        display: none;
+    }
+    .visible{
+        opacity: 1;
+        visibility: visible;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: fixed;
+        padding: 2rem;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #127369;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+    }
+
+    .menu_lista{
+        background-color: #127369;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem:
+    }
+
+    .menu_item{
+        color: #fbfbfb;
+    }
+
+    .contenedorProyectos{
+        flex-flow: column wrap;
+    }
+    .proyectoItem{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1rem;
+        width: 100%;
+    }
+    
+  }
+
      
 /* Recomendaciones! 
 *  - Comenzar desde lo más general y luego ir hacia lo mas específico, asignando primero
